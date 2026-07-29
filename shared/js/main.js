@@ -142,10 +142,6 @@ const site = {
         ["Field Interface", "Android / CAD stakeout / visual guidance"],
         ["Communication", "Long-range wireless field workflow"],
         ["Applications", "Stakeout, engineering survey and machine guidance"]
-      ],
-      secondaryDocs: [
-        ["ART1 brochure (Japanese)", "assets/art1-brochure-jp.pdf"],
-        ["SP200 brochure (Japanese)", "assets/sp200-brochure-jp.pdf"]
       ]
     },
     "slt12-android-total-station": {
