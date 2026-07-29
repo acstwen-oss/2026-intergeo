@@ -1,0 +1,114 @@
+:root {
+  --satlab-yellow: #ffd000;
+  --satlab-yellow-deep: #e7b500;
+  --ink: #17191c;
+  --graphite: #25282d;
+  --graphite-soft: #34383f;
+  --muted: #66707b;
+  --line: rgba(23, 25, 28, 0.13);
+  --paper: #f3f2ed;
+  --white: #ffffff;
+  --shadow-sm: 0 12px 34px rgba(18, 21, 25, 0.08);
+  --shadow-lg: 0 30px 80px rgba(18, 21, 25, 0.18);
+  --radius-sm: 8px;
+  --radius-lg: 18px;
+  --max: 1180px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--paper);
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic",
+    Meiryo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+li,
+th,
+td {
+  overflow-wrap: anywhere;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--satlab-yellow);
+  outline-offset: 4px;
+}
+
+::selection {
+  color: var(--ink);
+  background: var(--satlab-yellow);
+}
+
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  padding: 10px 14px;
+  color: var(--ink);
+  background: var(--satlab-yellow);
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
