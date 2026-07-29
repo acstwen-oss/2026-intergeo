@@ -44,7 +44,7 @@ const site = {
         ["Ports & Structures", "Capture high-density data around quay walls, embankments and structures in shallow or confined water."],
         ["Dredging & Volumes", "Compare terrain before and after work to support dredging quantities and sediment monitoring."]
       ],
-      products: ["hydroboat-1200mb"]
+      products: ["hydroboat-1200-gen2", "hydrobeam-m2", "hydroboat-1200mb"]
     },
     "machine-control": {
       number: "04",
@@ -57,7 +57,7 @@ const site = {
         ["Grading & Earthworks", "Guide dozers and graders along 3D design data for consistent site execution."],
         ["Connected Construction", "Link machines, field teams and office data for a clearer view of site progress."]
       ],
-      products: ["machine-control-solution"]
+      products: ["flexidig-3d", "machine-control-solution"]
     }
   },
   products: {
@@ -126,22 +126,24 @@ const site = {
     },
     ats1: {
       line: "surveying",
-      name: "Solo Surveying System",
-      en: "ART1 + SP200 One-Person Surveying",
-      intro: "A one-person surveying workflow combining the ART1 robotic total station with the SP200 SitePilot.",
+      name: "ART1",
+      en: "Robotic Total Station",
+      intro: "A robotic total station with AI visual tracking, Android field operation and GNSS-assisted one-person surveying workflows.",
       tag: "Robotic Surveying",
       points: [
-        ["Survey with One Operator", "Automatic tracking and long-range communication support efficient stakeout, as-built and structural survey work."],
-        ["Android Field Operation", "A touch interface with CAD and visual guidance simplifies common field measurement tasks."],
-        ["ART1 + SP200", "Bring the robotic total station and SitePilot controller into one connected field workflow."]
+        ["AI Visual Tracking", "Combine visual recognition, live video search and GNSS-assisted positioning to identify, lock and track the prism efficiently."],
+        ["Faster Station Setup", "Use image-based instrument-height measurement and free-station setup to reduce repetitive adjustments in the field."],
+        ["GNSS + Total Station Workflow", "Pair rapid GNSS guidance with millimeter-level robotic total-station measurement for one-person surveying."]
       ],
-      applications: ["One-Person Surveying", "Bridge & Dam Survey", "Stakeout & Machine Guidance"],
+      applications: ["One-Person Surveying", "Bridge & Dam Measurement", "Construction & Machine Control"],
       specs: [
-        ["System", "ART1 Robotic Total Station + SP200 SitePilot"],
-        ["Automatic Tracking", "2-200 m"],
-        ["Field Interface", "Android / CAD stakeout / visual guidance"],
-        ["Communication", "Long-range wireless field workflow"],
-        ["Applications", "Stakeout, engineering survey and machine guidance"]
+        ["Angle Accuracy", "2 arc seconds"],
+        ["Distance Accuracy", "Prism: 2 mm + 2 ppm / reflective sheet: 3 mm + 2 ppm"],
+        ["Measurement Range", "Prism: 1.5-3500 m / reflective sheet: 1.5-500 m"],
+        ["Automatic Tracking", "STR search distance: 1.5-600 m"],
+        ["Display & OS", "5.5-inch touch display / Android / full keyboard"],
+        ["Camera", "2 MP"],
+        ["Protection", "IP65 / -30°C to +50°C"]
       ]
     },
     "slt12-android-total-station": {
@@ -165,6 +167,50 @@ const site = {
         ["Applications", "Road, bridge, tunnel, stakeout and angle-set survey"]
       ]
     },
+    "hydroboat-1200-gen2": {
+      line: "hydrographic",
+      name: "HydroBoat 1200 GEN2",
+      en: "Next-Generation Multi-Functional USV",
+      intro: "A compact multi-payload hydrographic platform for bathymetry, flow measurement and water-quality missions.",
+      tag: "Multi-Payload USV",
+      points: [
+        ["One Platform, Multiple Sensors", "Carry multibeam or single-beam echo sounders, ADCP, side-scan sonar and water-quality instruments on one compact vessel."],
+        ["Automated Survey Workflows", "Use the SLHydro USV Android application for mission planning, auto-navigation and data collection across SBES, MBES and ADCP work."],
+        ["Built for Efficient Deployment", "Use removable wheels, single or dual hot-swappable batteries, 4G communication and millimeter-wave obstacle avoidance for safer field operation."]
+      ],
+      applications: ["Underwater Topographic Survey", "Hydrological Data Acquisition", "Water-Quality Inspection"],
+      specs: [
+        ["Hull Size", "1050 x 558 x 356 mm"],
+        ["Weight & Payload", "29 kg with one battery / up to 40 kg payload"],
+        ["Maximum Speed", "6.5 m/s"],
+        ["Battery", "Single or dual battery / hot-swappable / over 4 hours*"],
+        ["Communication", "2.4 GHz up to 2 km / 4G unlimited range*"],
+        ["Protection", "Double-hull construction / IP67"],
+        ["Safety", "Millimeter-wave radar, auto-return, obstacle avoidance and hover"]
+      ]
+    },
+    "hydrobeam-m2": {
+      line: "hydrographic",
+      name: "HydroBeam M2",
+      en: "Portable Multibeam Echo Sounder",
+      intro: "A portable 512-beam sonar for high-resolution underwater microtopography, live visualization and efficient post-processing.",
+      tag: "Portable Multibeam",
+      points: [
+        ["Live 3D Data in the Field", "View real-time XYZ point clouds, multibeam waveforms and side-scan imagery on multiple terminals while surveying."],
+        ["SVP-Free Sound Velocity Correction", "Use SPIN sound-speed-profile inversion for precise correction without a separate SVP device."],
+        ["Professional Processing Workflow", "Process, produce and export bathymetric data with SatLab SLHydroBeam post-processing software."]
+      ],
+      applications: ["Rivers & Reservoirs", "Ports & Vertical Structures", "Shallow-Water Microtopography"],
+      specs: [
+        ["Frequency", "400 kHz"],
+        ["Beam Width", "1.4° x 1.7°"],
+        ["Beams & Swath", "512 beams / 30°-150°"],
+        ["Depth Range", "0.2-200 m"],
+        ["Vertical Resolution", "1 cm"],
+        ["Maximum Ping Rate", "60 Hz"],
+        ["Size & Weight", "169 x 166 x 50 mm / 1.7 kg"]
+      ]
+    },
     "hydroboat-1200mb": {
       line: "hydrographic",
       name: "HydroBoat 1200MB",
@@ -185,6 +231,28 @@ const site = {
         ["Endurance", "Approx. 12 km @ 1.5 m/s / battery"],
         ["Rating", "IP67"],
         ["Navigation", "Manual / autopilot / auto-return"]
+      ]
+    },
+    "flexidig-3d": {
+      line: "machine-control",
+      name: "FlexiDig 3D",
+      en: "Excavator Machine Control System",
+      intro: "A 3D excavator guidance system combining dual GNSS, an IMU sensor, a rugged Android tablet and an in-cab receiver.",
+      tag: "Excavator Guidance",
+      points: [
+        ["Design Guidance in the Cab", "Show bucket position, elevation, slope and design surfaces on the TD200 tablet for efficient excavation."],
+        ["Rugged Multi-Sensor Kit", "Combine AT400 GNSS antennas, a high-impact IMU and an IP67 receiver for demanding machine environments."],
+        ["One System for Multiple Tasks", "Support ground leveling, dredging and desilting, slope trimming, trenching and grooving."]
+      ],
+      applications: ["Ground Leveling", "Dredging & Slope Trimming", "Trenching & Grooving"],
+      specs: [
+        ["Display", "TD200 / 10.1-inch / 1280 x 800 / Android 14"],
+        ["Tablet Protection", "IP65 / -30°C to +70°C"],
+        ["GNSS Antenna", "AT400 / 634 g / IP67"],
+        ["RTK Accuracy", "H: 8 mm + 1 ppm / V: 15 mm + 1 ppm RMS"],
+        ["Receiver Radio", "410-470 MHz / IP67"],
+        ["IMU Accuracy", "0.3° dynamic / 0.1° static"],
+        ["IMU Protection", "10 g anti-vibration / IP68"]
       ]
     },
     "machine-control-solution": {
@@ -227,7 +295,7 @@ function productUrl(id) {
 
 function productAssetUrl(id, file = "cover.png") {
   const product = site.products[id];
-  return linkTo(`satlab/${product.line}/${id}/assets/${file}`);
+  return `${linkTo(`satlab/${product.line}/${id}/assets/${file}`)}?v=20260729-audit2`;
 }
 
 function brochureUrl(id) {
@@ -420,7 +488,7 @@ function renderProduct() {
           </div>
         </div>
         <figure class="product-visual">
-          <img src="assets/cover.png" alt="${product.name} brochure cover">
+          <img src="assets/cover.png?v=20260729-audit2" alt="${product.name} brochure cover">
         </figure>
       </div>
     </section>
