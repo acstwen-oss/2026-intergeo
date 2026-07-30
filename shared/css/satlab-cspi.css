@@ -15,21 +15,21 @@
 }
 
 .brand-mark {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   flex: 0 0 auto;
   line-height: 1;
 }
 
-.brand-mark span {
-  color: var(--satlab-yellow);
-  font-size: 1.42rem;
-  font-weight: 950;
-  letter-spacing: -0.05em;
-  text-transform: lowercase;
+.brand-mark img {
+  display: block;
+  width: 132px;
+  height: auto;
 }
 
 .brand-mark small {
-  margin-top: 4px;
+  margin-top: 5px;
   color: rgba(255, 255, 255, 0.72);
   font-size: 0.66rem;
   font-weight: 800;
@@ -543,6 +543,33 @@
     linear-gradient(108deg, rgba(23, 25, 28, 0.98), rgba(23, 25, 28, 0.75)),
     url("../images/cygnus3-cover.jpg") center / cover no-repeat,
     var(--ink);
+}
+
+body[data-page="line"] .page-title {
+  background:
+    linear-gradient(108deg, rgba(23, 25, 28, 0.98) 0%, rgba(23, 25, 28, 0.84) 48%, rgba(23, 25, 28, 0.38) 100%),
+    var(--line-hero-image) var(--line-hero-position, center) / cover no-repeat,
+    var(--ink);
+}
+
+body[data-line="3d-mapping"] {
+  --line-hero-image: url("../../satlab/3d-mapping/cygnus3-slam-pro/assets/cover.png?v=20260730-line1");
+  --line-hero-position: center;
+}
+
+body[data-line="surveying"] {
+  --line-hero-image: url("../../satlab/surveying/sl8/assets/cover.png?v=20260730-line1");
+  --line-hero-position: center 62%;
+}
+
+body[data-line="hydrographic"] {
+  --line-hero-image: url("../../satlab/hydrographic/hydroboat-1200-gen2/assets/cover.png?v=20260730-line1");
+  --line-hero-position: center 76%;
+}
+
+body[data-line="machine-control"] {
+  --line-hero-image: url("../../satlab/machine-control/flexidig-3d/assets/cover.png?v=20260730-line1");
+  --line-hero-position: right center;
 }
 
 .page-title::after,
