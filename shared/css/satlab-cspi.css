@@ -166,7 +166,7 @@
 .hero__copy span,
 .page-title__copy span,
 .product-hero__copy span {
-  display: inline-block;
+  display: block;
   margin-top: 8px;
   color: rgba(255, 255, 255, 0.58);
   font-size: 0.88em;
@@ -549,6 +549,13 @@ body[data-page="line"] .page-title {
   background:
     linear-gradient(108deg, rgba(23, 25, 28, 0.98) 0%, rgba(23, 25, 28, 0.84) 48%, rgba(23, 25, 28, 0.38) 100%),
     var(--line-hero-image) var(--line-hero-position, center) / cover no-repeat,
+    var(--ink);
+}
+
+.product-hero {
+  background:
+    linear-gradient(108deg, rgba(23, 25, 28, 0.98) 0%, rgba(23, 25, 28, 0.84) 48%, rgba(23, 25, 28, 0.44) 100%),
+    var(--product-hero-image, url("../images/cygnus3-cover.jpg")) center / cover no-repeat,
     var(--ink);
 }
 

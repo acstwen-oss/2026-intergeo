@@ -37,14 +37,14 @@ const site = {
       number: "03",
       label: "Hydrographic",
       title: "Hydrographic",
-      subtitle: "Capture underwater terrain safely and efficiently with a compact multibeam USV.",
-      copy: "Integrated unmanned hydrographic survey for rivers, reservoirs, ports and near-shore infrastructure.",
+      subtitle: "Measure underwater terrain, water velocity and river discharge with sonar, ADCP and unmanned survey systems.",
+      copy: "Flexible hydrographic workflows for rivers, reservoirs, ports and near-shore infrastructure.",
       scenarios: [
-        ["Rivers & Reservoirs", "Reduce operator exposure on the water while running repeatable bathymetric survey missions."],
-        ["Ports & Structures", "Capture high-density data around quay walls, embankments and structures in shallow or confined water."],
-        ["Dredging & Volumes", "Compare terrain before and after work to support dredging quantities and sediment monitoring."]
+        ["Bathymetry & Underwater Terrain", "Run repeatable multibeam survey missions across rivers, reservoirs, ports and shallow-water structures."],
+        ["Flow & Discharge", "Profile water velocity and measure river discharge from vessels, floats or unmanned surface platforms."],
+        ["Dredging, Structures & Monitoring", "Support volume comparison, infrastructure inspection and long-duration hydrological monitoring."]
       ],
-      products: ["hydroboat-1200-gen2", "hydrobeam-m2", "hydroboat-1200mb"]
+      products: ["hydroflow-rp9", "hydroboat-1200-gen2", "hydrobeam-m2", "hydroboat-1200mb"]
     },
     "machine-control": {
       number: "04",
@@ -165,6 +165,30 @@ const site = {
         ["Field Functions", "CAD stakeout, visual guidance and guide light"],
         ["Communication", "Bluetooth / Wi-Fi / Type-C"],
         ["Applications", "Road, bridge, tunnel, stakeout and angle-set survey"]
+      ]
+    },
+    "hydroflow-rp9": {
+      line: "hydrographic",
+      name: "HydroFlow RP9",
+      en: "Multi-Frequency Acoustic Doppler Current Profiler",
+      intro: "An advanced multi-frequency ADCP for river discharge and velocity profiling from shallow streams to deep, fast-flowing channels.",
+      tag: "Multi-Frequency ADCP",
+      points: [
+        ["Intelligent Adaptive Operation", "Automatically switch between broadband, narrowband and pulse-coherent modes as flow and depth conditions change."],
+        ["Simultaneous Dual-Frequency Profiling", "Run two acoustic frequencies together for detailed surface measurements and extended bottom profiling."],
+        ["Ultra-Shallow to Deep Measurement", "Work in water as shallow as 0.05 m while maintaining continuous profiling across demanding river environments."]
+      ],
+      applications: ["River Discharge Measurement", "Long-Duration Flow Monitoring", "Flood & Emergency Surveys"],
+      specs: [
+        ["Frequency", "4 x 3.0 MHz / 4 x 1.2 MHz / 1 x 0.6 MHz"],
+        ["Working Modes", "Broadband / narrowband / pulse coherent"],
+        ["Cell Configuration", "0.02-4 m / 1-260 cells"],
+        ["Velocity Profile Range", "0.05-40 m"],
+        ["Bottom Track Range", "0.05-55 m"],
+        ["Maximum Ping Rate", "20 Hz"],
+        ["Data Communication", "RS-232 / Bluetooth 200 m / optional RS-422, RS-485 and 100M Ethernet"],
+        ["Rating & Storage", "50 m / 32 GB"],
+        ["Size & Weight", "Diameter 129 x 195 mm / 2.46 kg in air"]
       ]
     },
     "hydroboat-1200-gen2": {
@@ -295,7 +319,7 @@ function productUrl(id) {
 
 function productAssetUrl(id, file = "cover.png") {
   const product = site.products[id];
-  return `${linkTo(`satlab/${product.line}/${id}/assets/${file}`)}?v=20260729-audit2`;
+  return `${linkTo(`satlab/${product.line}/${id}/assets/${file}`)}?v=20260731-rp9`;
 }
 
 function brochureUrl(id) {
@@ -476,7 +500,7 @@ function renderProduct() {
   const line = site.lines[product.line];
 
   root.innerHTML = `
-    <section class="product-hero">
+    <section class="product-hero" style="--product-hero-image: url('../../satlab/${product.line}/${id}/assets/cover.png?v=20260731-rp9')">
       <div class="product-hero__inner">
         <div>
           <p class="eyebrow">${line.label} / ${product.tag}</p>
@@ -488,7 +512,7 @@ function renderProduct() {
           </div>
         </div>
         <figure class="product-visual">
-          <img src="assets/cover.png?v=20260729-audit2" alt="${product.name} brochure cover">
+          <img src="assets/cover.png?v=20260731-rp9" alt="${product.name} brochure cover">
         </figure>
       </div>
     </section>
