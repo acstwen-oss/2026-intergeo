@@ -11,14 +11,14 @@ const site = {
       number: "01",
       label: "3D Mapping",
       title: "3D Mapping",
-      subtitle: "Digitize complex environments faster with SLAM, RTK and high-density point clouds.",
-      copy: "Fast, flexible reality capture for construction, infrastructure, indoor spaces and digital twin workflows.",
+      subtitle: "Digitize complex environments faster with SLAM, RTK, UAV LiDAR and high-density point clouds.",
+      copy: "Flexible reality capture for aerial mapping, construction, infrastructure, indoor spaces and digital twin workflows.",
       scenarios: [
+        ["Aerial Mapping & Corridors", "Capture wide-area terrain, roads, power corridors and vegetation with long-range UAV LiDAR workflows."],
         ["Construction & BIM", "Capture as-built conditions, track progress, calculate volumes and prepare reference data for BIM workflows."],
-        ["Infrastructure & Corridors", "Map roads, bridges, tunnels and rail corridors with flexible mobile scanning workflows."],
         ["Indoor, Outdoor & Digital Twins", "Build continuous 3D context from open-sky GNSS areas to indoor and GNSS-challenged spaces."]
       ],
-      products: ["sl9-slam-rtk", "cygnus3-slam-pro"]
+      products: ["apus-mx-pro", "sl9-slam-rtk", "cygnus3-slam-pro"]
     },
     surveying: {
       number: "02",
@@ -101,6 +101,33 @@ const site = {
         ["Operating Time", "Up to 180 minutes"],
         ["Weight & Rating", "1.68 kg / IP54"],
         ["Operation Modes", "Handheld / backpack / vehicle / UAV"]
+      ]
+    },
+    "apus-mx-pro": {
+      line: "3d-mapping",
+      name: "Apus-MX Pro",
+      en: "Long-Range UAV LiDAR",
+      intro: "A compact UAV LiDAR payload combining long-range laser scanning, high-density point clouds and a 45 MP orthographic RGB camera for efficient aerial mapping.",
+      tag: "UAV LiDAR",
+      points: [
+        ["Higher Flight Height, Wider Coverage", "Combine an 80° field of view with up to 2,100 m measurement range to cover larger areas in fewer flights."],
+        ["Increased Vegetation Penetration", "Use up to 16 returns to capture more ground points through dense vegetation for accurate terrain and surface models."],
+        ["Integrated 45 MP RGB Camera", "Acquire high-resolution imagery and color point clouds for 3D reconstruction and digital orthomosaic production."]
+      ],
+      applications: ["Surveying & Mapping", "Road & Power Patrol", "Mining & Quarrying"],
+      specs: [
+        ["Maximum Measurement Range", "2,100 m @ reflectivity >80% / 1,000 m @ reflectivity >20%"],
+        ["Maximum Operating Flight Altitude", "500 m AGL @ 100 kHz"],
+        ["Field of View", "80°"],
+        ["Returns", "Up to 16"],
+        ["Point & Scan Rate", "2,000,000 points/s / 300 scans/s"],
+        ["System Accuracy", "H: 5 cm @ 500 m / V: 5 cm @ 300 m"],
+        ["Position Accuracy (PP)", "0.01 m RMS horizontal / 0.02 m RMS vertical"],
+        ["Attitude Accuracy (PP)", "0.010° heading / 0.005° roll and pitch"],
+        ["RGB Camera", "45 MP / 18 mm / 36 x 24 mm sensor"],
+        ["Weight & Protection", "1.55 kg / IP64"],
+        ["Mounting & Compatibility", "DJI SkyPort / DJI Matrice 300, 350 and 400"],
+        ["Operating Temperature", "-20°C to +50°C"]
       ]
     },
     sl8: {
@@ -319,7 +346,7 @@ function productUrl(id) {
 
 function productAssetUrl(id, file = "cover.png") {
   const product = site.products[id];
-  return `${linkTo(`satlab/${product.line}/${id}/assets/${file}`)}?v=20260731-rp9`;
+  return `${linkTo(`satlab/${product.line}/${id}/assets/${file}`)}?v=20260825-apus1`;
 }
 
 function brochureUrl(id) {
@@ -500,7 +527,7 @@ function renderProduct() {
   const line = site.lines[product.line];
 
   root.innerHTML = `
-    <section class="product-hero" style="--product-hero-image: url('../../satlab/${product.line}/${id}/assets/cover.png?v=20260731-rp9')">
+    <section class="product-hero" style="--product-hero-image: url('../../satlab/${product.line}/${id}/assets/cover.png?v=20260825-apus1')">
       <div class="product-hero__inner">
         <div>
           <p class="eyebrow">${line.label} / ${product.tag}</p>
@@ -512,7 +539,7 @@ function renderProduct() {
           </div>
         </div>
         <figure class="product-visual">
-          <img src="assets/cover.png?v=20260731-rp9" alt="${product.name} brochure cover">
+          <img src="assets/cover.png?v=20260825-apus1" alt="${product.name} brochure cover">
         </figure>
       </div>
     </section>
