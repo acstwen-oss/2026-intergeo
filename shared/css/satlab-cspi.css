@@ -560,22 +560,22 @@ body[data-page="line"] .page-title {
 }
 
 body[data-line="3d-mapping"] {
-  --line-hero-image: url("../../satlab/3d-mapping/cygnus3-slam-pro/assets/cover.png?v=20260730-line1");
+  --line-hero-image: url("../../satlab/3d-mapping/cygnus3-slam-pro/assets/cover.png?v=20260909-en-machine");
   --line-hero-position: center;
 }
 
 body[data-line="surveying"] {
-  --line-hero-image: url("../../satlab/surveying/sl8/assets/cover.png?v=20260730-line1");
+  --line-hero-image: url("../../satlab/surveying/sl8/assets/cover.png?v=20260909-en-machine");
   --line-hero-position: center 62%;
 }
 
 body[data-line="hydrographic"] {
-  --line-hero-image: url("../../satlab/hydrographic/hydroboat-1200-gen2/assets/cover.png?v=20260730-line1");
+  --line-hero-image: url("../../satlab/hydrographic/hydroboat-1200-gen2/assets/cover.png?v=20260909-en-machine");
   --line-hero-position: center 76%;
 }
 
 body[data-line="machine-control"] {
-  --line-hero-image: url("../../satlab/machine-control/flexidig-3d/assets/cover.png?v=20260730-line1");
+  --line-hero-image: url("../../satlab/machine-control/flexidig-3d/assets/cover.png?v=20260909-en-machine");
   --line-hero-position: right center;
 }
 

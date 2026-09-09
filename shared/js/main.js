@@ -286,17 +286,19 @@ const site = {
     },
     "flexidig-3d": {
       line: "machine-control",
-      name: "FlexiDig 3D",
+      name: "E20 & E50 Flexidig 3D",
       en: "Excavator Machine Control System",
-      intro: "A 3D excavator guidance system combining dual GNSS, an IMU sensor, a rugged Android tablet and an in-cab receiver.",
+      intro: "A flexible excavator guidance system with one cabin kit for E20 boom-mounted and E50 body-mounted installation kits, supporting infield design and full 3D workflows.",
       tag: "Excavator Guidance",
       points: [
-        ["Design Guidance in the Cab", "Show bucket position, elevation, slope and design surfaces on the TD200 tablet for efficient excavation."],
-        ["Rugged Multi-Sensor Kit", "Combine AT400 GNSS antennas, a high-impact IMU and an IP67 receiver for demanding machine environments."],
-        ["One System for Multiple Tasks", "Support ground leveling, dredging and desilting, slope trimming, trenching and grooving."]
+        ["One Cabin Kit, Multiple Machines", "Use the 1+N installation concept across mini, large, wheeled, mono-boom, swing-boom, dual-boom and tilt-rotator excavators."],
+        ["From Infield Design to Full 3D", "Switch between 2D and 3D views, follow design models and review real-time excavation trajectories and quality heatmaps."],
+        ["Flexible Earthwork Guidance", "Work with surfaces, continuous slopes, V-shaped slopes and trenches to reduce over- and under-excavation."]
       ],
       applications: ["Ground Leveling", "Dredging & Slope Trimming", "Trenching & Grooving"],
       specs: [
+        ["Installation Options", "E20 Compact: boom-mounted / E50 Standard: body-mounted"],
+        ["Design Files", "XML / DXF / SJW / TTN / ROAD"],
         ["Display", "TD200 / 10.1-inch / 1280 x 800 / Android 14"],
         ["Tablet Protection", "IP65 / -30°C to +70°C"],
         ["GNSS Antenna", "AT400 / 634 g / IP67"],
@@ -309,22 +311,25 @@ const site = {
     "machine-control-solution": {
       line: "machine-control",
       name: "Machine Control Solution",
-      en: "Unified 3D Construction Workflow",
-      intro: "A 3D guidance and control portfolio for excavators, bulldozers and motor graders managed in one workflow.",
+      en: "Machine Guidance for Earth Construction",
+      intro: "High-precision GNSS, angle sensors and SatMC software connect excavators, bulldozers and graders with real-time guidance, design data and cloud project management.",
       tag: "Construction Technology",
       points: [
-        ["Three Machine Categories", "Bring E10/E20/E50, D60/D60Pro and G60 into a portfolio matched to different construction tasks."],
-        ["Bring Design Surfaces to the Cab", "Use GNSS, sensors and controllers to guide cut, fill, elevation and slope information."],
-        ["Manage with SatMC", "Connect machine setup, construction data and field operation through a unified smart platform."]
+        ["Excavator Guidance", "Choose E20/E50 Flexidig 3D with a shared cabin kit and full 3D model guidance, or E10 Lightidig 3D with real-time bucket positioning and 2D visual guidance."],
+        ["Dozer and Grader Control", "D60 provides real-time pass tracking at a 10 Hz refresh rate. G60 combines 3D visual guidance, automatic blade control and live sensor feedback."],
+        ["From Field to Cloud", "SatMC supports project-file sharing, design and localization settings, machine status and remote construction monitoring through the cloud platform."]
       ],
       applications: ["Excavator Guidance", "Dozer Control", "Motor Grader Finishing"],
       specs: [
-        ["Excavators", "E10 / E20 / E50 guidance systems"],
-        ["Bulldozers", "D60 / D60Pro 3D control"],
-        ["Motor Grader", "G60 3D control"],
-        ["Platform", "SatMC"],
-        ["Data", "3D design surfaces / positioning / machine sensors"],
-        ["Value", "Productivity, quality and reduced rework"]
+        ["Excavators", "E10 Lightidig 3D / E20 & E50 Flexidig 3D"],
+        ["Bulldozers", "D60 / 10 Hz refresh rate / real-time pass tracking"],
+        ["Motor Graders", "G60 / automatic blade control / 3D visual guidance"],
+        ["Software", "SatMC onboard software and cloud project management"],
+        ["E20/E50 Cabin Kit", "TD200 tablet / AT400 GNSS antennas / MC201 receiver"],
+        ["E10 Cabin Kit", "TD102 tablet / AT300 GNSS antenna / TS200 IMU sensors"],
+        ["TD122 Tablet", "10.1-inch / 1280 x 800 / Android 11 / 9-36 V DC"],
+        ["MC101 RTK Accuracy", "Horizontal: 0.8 cm + 1 ppm / Vertical: 1.5 cm + 1 ppm RMS"],
+        ["MC101 Protection", "IP67 / operating temperature -40°C to +75°C"]
       ]
     }
   }
@@ -346,11 +351,11 @@ function productUrl(id) {
 
 function productAssetUrl(id, file = "cover.png") {
   const product = site.products[id];
-  return `${linkTo(`satlab/${product.line}/${id}/assets/${file}`)}?v=20260825-apus1`;
+  return `${linkTo(`satlab/${product.line}/${id}/assets/${file}`)}?v=20260909-en-machine`;
 }
 
 function brochureUrl(id) {
-  return productUrl(id).replace("index.html", "brochure.pdf");
+  return productUrl(id).replace("index.html", "brochure.pdf?v=20260909-en-machine");
 }
 
 function lineUrl(id) {
@@ -527,19 +532,19 @@ function renderProduct() {
   const line = site.lines[product.line];
 
   root.innerHTML = `
-    <section class="product-hero" style="--product-hero-image: url('../../satlab/${product.line}/${id}/assets/cover.png?v=20260825-apus1')">
+    <section class="product-hero" style="--product-hero-image: url('../../satlab/${product.line}/${id}/assets/cover.png?v=20260909-en-machine')">
       <div class="product-hero__inner">
         <div>
           <p class="eyebrow">${line.label} / ${product.tag}</p>
           <h1>${product.name}</h1>
           <p class="product-hero__copy">${product.intro}<span>${product.en}</span></p>
           <div class="hero__actions">
-            ${button("Open PDF brochure", "brochure.pdf", "primary", 'target="_blank" rel="noopener"')}
+            ${button("Open English PDF brochure", "brochure.pdf?v=20260909-en-machine", "primary", 'target="_blank" rel="noopener"')}
             ${button("Back to product line", "../index.html", "ghost")}
           </div>
         </div>
         <figure class="product-visual">
-          <img src="assets/cover.png?v=20260825-apus1" alt="${product.name} brochure cover">
+          <img src="assets/cover.png?v=20260909-en-machine" alt="${product.name} brochure cover">
         </figure>
       </div>
     </section>
@@ -598,7 +603,7 @@ function renderProduct() {
           <p>Open on an iPad, access by QR code, or save the brochure for offline review.</p>
         </div>
         <div class="product-actions">
-          ${button("Download PDF", "brochure.pdf", "primary", "download")}
+          ${button("Download English PDF", "brochure.pdf?v=20260909-en-machine", "primary", "download")}
           ${button("Back to product line", "../index.html", "ghost")}
         </div>
       </div>
