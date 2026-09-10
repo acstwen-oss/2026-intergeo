@@ -155,43 +155,53 @@ const site = {
       line: "surveying",
       name: "ART1",
       en: "Robotic Total Station",
-      intro: "A robotic total station with AI visual tracking, Android field operation and GNSS-assisted one-person surveying workflows.",
+      intro: "Move from team-based work to an efficient one-person surveying workflow with AI visual tracking, Android operation and GNSS-assisted pole control.",
       tag: "Robotic Surveying",
       points: [
         ["AI Visual Tracking", "Combine visual recognition, live video search and GNSS-assisted positioning to identify, lock and track the prism efficiently."],
         ["Faster Station Setup", "Use image-based instrument-height measurement and free-station setup to reduce repetitive adjustments in the field."],
-        ["GNSS + Total Station Workflow", "Pair rapid GNSS guidance with millimeter-level robotic total-station measurement for one-person surveying."]
+        ["Hybrid Surveying with Dual Tilt", "Combine GNSS guidance and robotic total-station precision with GNSS tilt compensation and optical tilt measurement for obstructed or confined sites."]
       ],
       applications: ["One-Person Surveying", "Bridge & Dam Measurement", "Construction & Machine Control"],
       specs: [
         ["Angle Accuracy", "2 arc seconds"],
         ["Distance Accuracy", "Prism: 2 mm + 2 ppm / reflective sheet: 3 mm + 2 ppm"],
         ["Measurement Range", "Prism: 1.5-3500 m / reflective sheet: 1.5-500 m"],
-        ["Automatic Tracking", "STR search distance: 1.5-600 m"],
-        ["Display & OS", "5.5-inch touch display / Android / full keyboard"],
+        ["Automatic Tracking", "STR distance: 1.5-600 m / in-FOV search: <=3 s"],
+        ["Rotation", "Maximum speed: >=180 degrees/s"],
+        ["Display & System", "5.5-inch touch display / Android / Qualcomm octa-core 1.8 GHz"],
+        ["Memory", "3 GB RAM / 32 GB storage"],
         ["Camera", "2 MP"],
+        ["SP10 Pro RTK", "H: 8 mm + 1 ppm / V: 15 mm + 1 ppm RMS"],
+        ["Tilt Survey", "GNSS: +/-3 cm at <=30 degrees / optical: 3 mm + 0.6 mm/degree, 0-60 degrees"],
         ["Protection", "IP65 / -30°C to +50°C"]
       ]
     },
     "slt12-android-total-station": {
       line: "surveying",
       name: "SLT12 Pro",
-      en: "Android Total Station",
-      intro: "A next-generation total station combining onboard cameras, CAD stakeout and an Android field interface.",
-      tag: "Android Total Station",
+      en: "Imaging Total Station",
+      intro: "See and measure more clearly with coaxial imaging, dual high-definition displays, visual stakeout and a full-keypad Android field workflow.",
+      tag: "Imaging Total Station",
       points: [
-        ["Dedicated Sighting Camera", "View the target on a large display for easier aiming in dark or visually complex environments."],
-        ["CAD Stakeout", "Select points and lines directly from design data and bring them into the field with a clear workflow."],
-        ["Built for Field Operation", "Combine a full keyboard, guide light and Android interface for rain, gloves and demanding site conditions."]
+        ["Coaxial Imaging", "Align optical and measurement paths for real-time target viewing, image capture and point-associated field verification."],
+        ["Guidance Light", "Use red and green guidance from 1.5 to 150 m to help the rod operator align quickly in tunnels, underground sites and low-light work."],
+        ["CAD Stakeout and Full Keypad", "Select points and lines with a responsive CAD engine, then work accurately with backlit physical keys in cold, wet or glove-wearing conditions."]
       ],
       applications: ["Roads, Bridges & Tunnels", "Construction Stakeout", "General Survey & As-Built"],
       specs: [
-        ["Operating System", "Android"],
-        ["Controls", "Touch display + full keyboard"],
-        ["Cameras", "Dedicated sighting camera + off-axis camera"],
-        ["Field Functions", "CAD stakeout, visual guidance and guide light"],
-        ["Communication", "Bluetooth / Wi-Fi / Type-C"],
-        ["Applications", "Road, bridge, tunnel, stakeout and angle-set survey"]
+        ["Angle Accuracy", "1 or 2 arc seconds / 0.1 arc-second minimum readout"],
+        ["Prism Measurement", "Up to 5000 m / fine accuracy: +/-2 mm + 2 ppm"],
+        ["Reflectorless Measurement", "Up to 1000 m / approximately 1 s"],
+        ["Display", "5.5-inch touch display / 720 x 1440 / dual or single-screen modes"],
+        ["Cameras", "2 MP coaxial / 8 MP off-axis"],
+        ["Guidance Light", "Visible from 1.5 to 150 m"],
+        ["System", "Android / 3 GB RAM / 32 GB storage"],
+        ["Communication", "Type-C OTG / TF card / RS-232 / Wi-Fi / Bluetooth"],
+        ["Compensator", "Dual-axis / +/-6 arc minutes / 1 arc-second accuracy"],
+        ["Protection", "IP65 / -20°C to +50°C"],
+        ["Battery", "7.2 V / 6800 mAh / up to 8 hours with two batteries"],
+        ["Size & Weight", "221 x 223 x 374 mm / approximately 6 kg"]
       ]
     },
     "hydroflow-rp9": {
@@ -351,11 +361,11 @@ function productUrl(id) {
 
 function productAssetUrl(id, file = "cover.png") {
   const product = site.products[id];
-  return `${linkTo(`satlab/${product.line}/${id}/assets/${file}`)}?v=20260909-en-machine`;
+  return `${linkTo(`satlab/${product.line}/${id}/assets/${file}`)}?v=20260910-surveying`;
 }
 
 function brochureUrl(id) {
-  return productUrl(id).replace("index.html", "brochure.pdf?v=20260909-en-machine");
+  return productUrl(id).replace("index.html", "brochure.pdf?v=20260910-surveying");
 }
 
 function lineUrl(id) {
@@ -532,19 +542,19 @@ function renderProduct() {
   const line = site.lines[product.line];
 
   root.innerHTML = `
-    <section class="product-hero" style="--product-hero-image: url('../../satlab/${product.line}/${id}/assets/cover.png?v=20260909-en-machine')">
+    <section class="product-hero" style="--product-hero-image: url('../../satlab/${product.line}/${id}/assets/cover.png?v=20260910-surveying')">
       <div class="product-hero__inner">
         <div>
           <p class="eyebrow">${line.label} / ${product.tag}</p>
           <h1>${product.name}</h1>
           <p class="product-hero__copy">${product.intro}<span>${product.en}</span></p>
           <div class="hero__actions">
-            ${button("Open English PDF brochure", "brochure.pdf?v=20260909-en-machine", "primary", 'target="_blank" rel="noopener"')}
+            ${button("Open English brochure", "brochure.pdf?v=20260910-surveying", "primary", 'target="_blank" rel="noopener"')}
             ${button("Back to product line", "../index.html", "ghost")}
           </div>
         </div>
         <figure class="product-visual">
-          <img src="assets/cover.png?v=20260909-en-machine" alt="${product.name} brochure cover">
+          <img src="assets/cover.png?v=20260910-surveying" alt="${product.name} brochure cover">
         </figure>
       </div>
     </section>
@@ -603,7 +613,7 @@ function renderProduct() {
           <p>Open on an iPad, access by QR code, or save the brochure for offline review.</p>
         </div>
         <div class="product-actions">
-          ${button("Download English PDF", "brochure.pdf?v=20260909-en-machine", "primary", "download")}
+          ${button("Download English PDF", "brochure.pdf?v=20260910-surveying", "primary", "download")}
           ${button("Back to product line", "../index.html", "ghost")}
         </div>
       </div>
